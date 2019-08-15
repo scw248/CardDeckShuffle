@@ -23,7 +23,7 @@ function shuffle() {
     deck[location1] = deck[location2];
     deck[location2] = tmp;
   }
-
+  showShuffledDeck()
 }
 
 function showShuffledDeck() {
@@ -54,6 +54,4 @@ function showShuffledDeck() {
 
 window.addEventListener('load', function () {
   startDeck();
-  shuffle();
-  showShuffledDeck();
 })
