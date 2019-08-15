@@ -2,11 +2,11 @@ const deck = []
 const suits = ['spades', 'diamonds', 'clubs', 'hearts'];
 const values = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
 
-function getDeck() {
+function startDeck() {
 
   for (let i = 0; i < suits.length; i++) {
-    for (let x = 0; x < values.length; x++) {
-      let card = { Value: values[x], Suit: suits[i] };
+    for (let j = 0; j < values.length; j++) {
+      let card = { Value: values[j], Suit: suits[i] };
       deck.push(card);
     }
   }
@@ -15,8 +15,6 @@ function getDeck() {
 }
 
 function shuffle() {
-  // for 1000 turns
-  // switch the values of two random cards
   for (let i = 0; i < 1000; i++) {
     let location1 = Math.floor((Math.random() * deck.length));
     let location2 = Math.floor((Math.random() * deck.length));
@@ -25,10 +23,11 @@ function shuffle() {
     deck[location1] = deck[location2];
     deck[location2] = tmp;
   }
+
 }
 
-function renderDeck() {
-  let showDeck = document.createElement('div')
+function showShuffledDeck() {
+  let showDeck = document.getElementById('showDeck')
   showDeck.innerHTML = '';
 
   for (let i = 0; i < deck.length; i++) {
@@ -36,20 +35,25 @@ function renderDeck() {
     let icon = ''
 
     if (deck[i].Suit === 'hearts') {
-      icon = '?'
+      icon = 'H'
     }
     else if (deck[i].Suit === 'spades') {
-      icon = '?'
+      icon = 'S'
     }
     else if (deck[i].Suit === 'diamonds') {
-      icon = '?'
+      icon = 'D'
     }
     else {
-      icon = '?'
+      icon = 'C'
     }
 
     card.innerHTML = deck[i].Value + '' + icon;
-    card.className = 'card';
     showDeck.appendChild(card);
   }
 }
+
+window.addEventListener('load', function () {
+  startDeck();
+  shuffle();
+  showShuffledDeck();
+})
