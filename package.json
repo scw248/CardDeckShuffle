@@ -1,0 +1,20 @@
+{
+  "devDependencies": {
+    "start-server-and-test": "^1.10.0"
+  },
+  "name": "carddeckshuffle",
+  "version": "1.0.0",
+  "main": "shuffleDeck.js",
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scw248/CardDeckShuffle.git"
+  },
+  "author": "Stephen Wright",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/scw248/CardDeckShuffle/issues"
+  },
+  "homepage": "https://github.com/scw248/CardDeckShuffle#readme",
+  "description": ""
+}
